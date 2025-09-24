@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb0b9ce0-b0c8-45b4-b5be-d85aa74a8011" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/UGVserver.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UGVserver.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UgvEsp32.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ups3sIna219.py" afterDir="false" />
+    <list default="true" id="cb0b9ce0-b0c8-45b4-b5be-d85aa74a8011" name="Changes" comment="use main branch">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UgvEsp32.py" beforeDir="false" afterPath="$PROJECT_DIR$/UgvEsp32.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ups3sIna219.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ups3sIna219.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,12 +65,17 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/martin/IdeaProjects/UGVserver",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.53019536",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "editor.preferences.pyOptions"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -145,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758697360761</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="use main branch">
+      <option name="closed" value="true" />
+      <created>1758699001409</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1758699001409</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -166,6 +178,7 @@
     <MESSAGE value="Jetson Orin Nano has I2C interface 1 on pin 27/28 of expansion header" />
     <MESSAGE value="first steps for different http request" />
     <MESSAGE value="first command to control UGV EPS32" />
-    <option name="LAST_COMMIT_MESSAGE" value="first command to control UGV EPS32" />
+    <MESSAGE value="use main branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="use main branch" />
   </component>
 </project>

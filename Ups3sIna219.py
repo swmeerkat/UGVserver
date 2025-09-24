@@ -46,23 +46,27 @@ class Ups3sIna219:
     temp[0] = (data & 0xFF00) >> 8
     self.bus.write_i2c_block_data(self.addr, address, temp)
 
-  def getShuntVoltage_mV(self):
+  # shunt voltage in mV
+  def get_shunt_voltage(self):
     self.write(_REG_CALIBRATION, self._cal_value)
     value: int = self.read(_REG_SHUNTVOLTAGE)
     if value > 32767: value -= 65535
     return value * self._shunt_mV_lsb
 
-  def getBusVoltage_V(self):
+  # bus voltage in V
+  def get_bus_voltage(self):
     self.write(_REG_CALIBRATION, self._cal_value)
     self.read(_REG_BUSVOLTAGE)
     return (self.read(_REG_BUSVOLTAGE) >> 3) * self._bus_V_lsb
 
-  def getCurrent_mA(self):
+  # current in mA
+  def get_current(self):
     value = self.read(_REG_CURRENT)
     if value > 32767: value -= 65535
     return value * self._current_lsb
 
-  def getPower_W(self):
+  # power in W
+  def get_power(self):
     self.write(_REG_CALIBRATION, self._cal_value)
     value = self.read(_REG_POWER)
     if value > 32767:
@@ -71,10 +75,10 @@ class Ups3sIna219:
 
   def get_power_status(self):
     print("INA219 config: 0x{:4x}".format(self.read(0))) # config register
-    bus_voltage = self.getBusVoltage_V()  # voltage on V- (load side)
-    shunt_voltage = self.getShuntVoltage_mV() / 1000
-    current = self.getCurrent_mA() / 1000 # current in A
-    power = self.getPower_W()  # power in W
+    bus_voltage = self.get_bus_voltage()  # voltage on V- (load side)
+    shunt_voltage = self.get_shunt_voltage() / 1000
+    current = self.get_current() / 1000 # current in A
+    power = self.get_power()  # power in W
     p = (bus_voltage - 9) / 3.6 * 100 # 3 x 3V V min batterie, 3.6V target
     if p > 100: p = 100
     if p < 0: p = 0
