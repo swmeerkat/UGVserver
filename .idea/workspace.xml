@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb0b9ce0-b0c8-45b4-b5be-d85aa74a8011" name="Changes" comment="first command to control UGV EPS32" />
+    <list default="true" id="cb0b9ce0-b0c8-45b4-b5be-d85aa74a8011" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/UGVserver.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UGVserver.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UgvEsp32.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ups3sIna219.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,18 +30,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "swmeerkat"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;swmeerkat&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/swmeerkat/UGVserver",
-    "accountId": "c4f21abd-1c6c-40a6-9319-e89548d47cc2"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/swmeerkat/UGVserver&quot;,
+    &quot;accountId&quot;: &quot;c4f21abd-1c6c-40a6-9319-e89548d47cc2&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -57,6 +62,8 @@
     "Python.UGVdata.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/martin/IdeaProjects/UGVserver",
     "project.structure.last.edited": "SDKs",
