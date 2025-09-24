@@ -9,7 +9,7 @@ class UgvEsp32:
 
   def get_imu_data(self):
     cmd = "{\"T\":130}"
-    return self.do_GET(cmd)
+    return self.do_get(cmd)
 
   def do_get(self, cmd):
     url = "http://" + self.ip + "/js?json=" + cmd
