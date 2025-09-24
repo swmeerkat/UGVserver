@@ -28,7 +28,7 @@ class UGVserver(BaseHTTPRequestHandler):
     return dict(parse_qsl(self.post_data.decode("utf-8")))
 
   def do_GET(self):
-    response = ""
+    response = "{}"
     match self.url.path:
       case "/ugv_power_status":
         response = ups3s.get_power_status()
@@ -38,8 +38,12 @@ class UGVserver(BaseHTTPRequestHandler):
         response = ugvClient.get_base_feedback()
       case "/ugv_new_middle_position":
         response = ugvClient.new_middle_position()
+      case "/ugv_speed_control":
+        ugvClient.ugv_speed_control(self.query_data["l"], self.query_data["r"])
+      case "/gimbal_ctrl_simple":
+        ugvClient.gimbal_ctrl_simple(self.query_data["p"], self.query_data["t"])
       case _:
-        response = "{}"
+        response = "{ \"error\": \"unknown command: " + self.path  + "\"}"
     self.send_response(200)
     self.send_header("Content-Type", "application/json")
     self.end_headers()

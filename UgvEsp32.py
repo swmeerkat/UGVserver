@@ -63,7 +63,7 @@ class UgvEsp32:
   #  - left, right: speed of the wheel, value range 0.5 - -0.5
   def ugv_speed_control(self, left, right):
     cmd = "{\"T\":1,\"L\":" + str(left) + ",\"R\":" + str(right) + "}"
-    return self.do_get(cmd)
+    self.do_get(cmd)
 
   # CMD_GIMBAL_CTRL_SIMPLE
   # Input:
@@ -72,10 +72,10 @@ class UgvEsp32:
   #  - SPD: Speed, 0 means fastest
   #  - ACC: Acceleration, 0 means fastest
   def gimbal_ctrl_simple(self, pan, tilt):
-    cmd = "{\"T\":133,\"X\":" + str(pan) + ",\"Y\":" + str(tilt) + ",\"SPD\":0,\"ACC\":0} "
+    cmd = "{\"T\":133,\"X\":" + str(pan) + ",\"Y\":" + str(tilt) + ",\"SPD\":0,\"ACC\":0}"
     self.actPan = pan
     self.actTilt = tilt
-    return self.do_get(cmd)
+    self.do_get(cmd)
 
   #
   # CMD_GIMBAL_CTRL_STOPE
