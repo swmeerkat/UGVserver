@@ -77,12 +77,16 @@ class UgvEsp32:
     self.actTilt = tilt
     self.do_get(cmd)
 
-  #
   # CMD_GIMBAL_CTRL_STOPE
   # Stops the pan-tilt movement at any time
   def gimbal_ctrl_stop(self):
     cmd = "{\"T\":133} "
     self.do_get(cmd)
+
+  # all stop
+  def all_stop(self):
+    self.ugv_speed_control(0,0)
+    self.gimbal_ctrl_stop()
 
   # pan one step to right
   def pan_right(self):

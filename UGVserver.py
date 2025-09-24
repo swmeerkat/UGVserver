@@ -42,6 +42,16 @@ class UGVserver(BaseHTTPRequestHandler):
         ugvClient.ugv_speed_control(self.query_data["l"], self.query_data["r"])
       case "/gimbal_ctrl_simple":
         ugvClient.gimbal_ctrl_simple(self.query_data["p"], self.query_data["t"])
+      case "/all_stop":
+        ugvClient.all_stop()
+      case "/pan_left":
+        ugvClient.pan_left()
+      case "/pan_right":
+        ugvClient.pan_right()
+      case "/tilt_up":
+        ugvClient.tilt_up()
+      case "/tilt_down":
+        ugvClient.tilt_down()
       case _:
         response = "{ \"error\": \"unknown command: " + self.path  + "\"}"
     self.send_response(200)
