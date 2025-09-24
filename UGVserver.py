@@ -34,6 +34,8 @@ class UGVserver(BaseHTTPRequestHandler):
         response = ups3s.get_power_status()
       case "/ugv_imu_data":
         response = ugvClient.get_imu_data()
+      case "/ugv_base_feedback":
+        response = ugvClient.get_base_feedback()
       case _:
         response = "{}"
     self.send_response(200)
