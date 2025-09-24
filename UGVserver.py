@@ -36,6 +36,8 @@ class UGVserver(BaseHTTPRequestHandler):
         response = ugvClient.get_imu_data()
       case "/ugv_base_feedback":
         response = ugvClient.get_base_feedback()
+      case "/ugv_new_middle_position":
+        response = ugvClient.new_middle_position()
       case _:
         response = "{}"
     self.send_response(200)
@@ -57,5 +59,6 @@ class UGVserver(BaseHTTPRequestHandler):
 if __name__ == "__main__":
   ups3s = Ups3sIna219.Ups3sIna219()
   ugvClient = UgvEsp32.UgvEsp32(UGVhost)
+  ugvClient.gimbal_ctrl_simple(0, 0)
   ugvServer = HTTPServer(("0.0.0.0", 8000), UGVserver)
   ugvServer.serve_forever()
