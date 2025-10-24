@@ -85,11 +85,11 @@ class Ups3sIna219:
     return json.dumps(
       {
         "ups3s": {
-          "v_psu": "{:6.3f}V".format(bus_voltage + shunt_voltage),
-          "v_load": "{:6.3f}V".format(bus_voltage),
-          "current": "{:7.4f}A".format(current),
-          "power": "{:6.3f}W".format(power),
-          "percent": "{:3.1f}%".format(p)
+          "v_psu": '{:6.3f}'.format(bus_voltage + shunt_voltage),
+          "v_load": '{:6.3f}'.format(bus_voltage),
+          "current": '{:7.4f}'.format(current),
+          "power": '{:6.3f}'.format(power),
+          "percent": '{:3.1f}'.format(p)
         }
       }
   )
