@@ -1,12 +1,8 @@
 #!/usr/bin/env python3
 import Ups3sIna219
-import UgvEsp32
 from functools import cached_property
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import parse_qsl, urlparse
-
-# UGV02 ESP32 client address
-UGVhost = "192.168.178.29"
 
 
 class UGVserver(BaseHTTPRequestHandler):
@@ -32,26 +28,6 @@ class UGVserver(BaseHTTPRequestHandler):
     match self.url.path:
       case "/ugv_power_status":
         response = ups3s.get_power_status()
-      case "/ugv_imu_data":
-        response = ugvClient.get_imu_data()
-      case "/ugv_base_feedback":
-        response = ugvClient.get_base_feedback()
-      case "/ugv_new_middle_position":
-        response = ugvClient.new_middle_position()
-      case "/ugv_speed_control":
-        ugvClient.ugv_speed_control(self.query_data["l"], self.query_data["r"])
-      case "/gimbal_ctrl_simple":
-        ugvClient.gimbal_ctrl_simple(self.query_data["p"], self.query_data["t"])
-      case "/all_stop":
-        ugvClient.all_stop()
-      case "/pan_left":
-        ugvClient.pan_left()
-      case "/pan_right":
-        ugvClient.pan_right()
-      case "/tilt_up":
-        ugvClient.tilt_up()
-      case "/tilt_down":
-        ugvClient.tilt_down()
       case _:
         response = "{ \"error\": \"unknown command: " + self.path  + "\"}"
     self.send_response(200)
@@ -72,7 +48,5 @@ class UGVserver(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
   ups3s = Ups3sIna219.Ups3sIna219()
-  ugvClient = UgvEsp32.UgvEsp32(UGVhost)
-  ugvClient.gimbal_ctrl_simple(0, 0)
   ugvServer = HTTPServer(("0.0.0.0", 8000), UGVserver)
   ugvServer.serve_forever()

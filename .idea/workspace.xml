@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb0b9ce0-b0c8-45b4-b5be-d85aa74a8011" name="Changes" comment="UGV sped, pan tilt commands">
+    <list default="true" id="cb0b9ce0-b0c8-45b4-b5be-d85aa74a8011" name="Changes" comment="ugv_power_status response changed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ups3sIna219.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ups3sIna219.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UGVserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/UGVserver.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -301,7 +301,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758742940361</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="ugv_power_status response changed">
+      <option name="closed" value="true" />
+      <created>1761333935203</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1761333935203</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -328,6 +336,7 @@
     <MESSAGE value="CMD_BASE_FEEDBACK" />
     <MESSAGE value="more REST calls" />
     <MESSAGE value="UGV sped, pan tilt commands" />
-    <option name="LAST_COMMIT_MESSAGE" value="UGV sped, pan tilt commands" />
+    <MESSAGE value="ugv_power_status response changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="ugv_power_status response changed" />
   </component>
 </project>

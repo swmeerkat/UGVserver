@@ -45,19 +45,6 @@ class UgvEsp32:
     return self.do_get(cmd)
 
   #
-  # Set servo middle position
-  # Sets the actual servo position as new middle position
-  # Input:
-  #  - id: 1 - tilt servo, 2 - pan servo
-  def new_middle_position(self):
-    servo = "1"
-    cmd = "{\"T\":502,\"id\":" + servo + "}"
-    self.do_get(cmd)
-    servo = "2"
-    cmd = "{\"T\":502,\"id\":" + servo + "}"
-    return self.do_get(cmd)
-
-  #
   # CMD_SPEED_CTRL
   # Input:
   #  - left, right: speed of the wheel, value range 0.5 - -0.5
