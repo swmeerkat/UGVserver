@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-import Ups3sIna219
+import CobraFlex
 from functools import cached_property
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import parse_qsl, urlparse
 
 
 class UGVserver(BaseHTTPRequestHandler):
+
   @cached_property
   def url(self):
     return urlparse(self.path)
@@ -26,10 +27,10 @@ class UGVserver(BaseHTTPRequestHandler):
   def do_GET(self):
     response = "{}"
     match self.url.path:
-      case "/ugv_power_status":
-        response = ups3s.get_power_status()
+      case "/cobraflex/feedback":
+        response = CobraFlex.read()
       case _:
-        response = "{ \"error\": \"unknown command: " + self.path  + "\"}"
+        response = "{ \"error\": \"unknown command: " + self.path + "\"}"
     self.send_response(200)
     self.send_header("Content-Type", "application/json")
     self.end_headers()
@@ -38,8 +39,10 @@ class UGVserver(BaseHTTPRequestHandler):
   def do_POST(self):
     response = ""
     match self.url.path:
-      case _:
+      case "cobraflex/cmd":
         response = "{}"
+      case _:
+        response = "{ \"error\": \"unknown command: " + self.path + "\"}"
     self.send_response(200)
     self.send_header("Content-Type", "application/json")
     self.end_headers()
@@ -47,6 +50,6 @@ class UGVserver(BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-  ups3s = Ups3sIna219.Ups3sIna219()
+  CobraFlex = CobraFlex.CobraFlex()
   ugvServer = HTTPServer(("0.0.0.0", 8000), UGVserver)
   ugvServer.serve_forever()
