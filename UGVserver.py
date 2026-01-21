@@ -37,10 +37,10 @@ class UGVserver(BaseHTTPRequestHandler):
     self.wfile.write(response.encode("utf-8"))
 
   def do_POST(self):
-    response = ""
+    response = "{}"
     match self.url.path:
-      case "cobraflex/cmd":
-        response = "{}"
+      case "/cobraflex/cmd":
+        CobraFlex.write(self.post_data.decode("utf-8"))
       case _:
         response = "{ \"error\": \"unknown command: " + self.path + "\"}"
     self.send_response(200)

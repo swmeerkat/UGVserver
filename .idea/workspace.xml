@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb0b9ce0-b0c8-45b4-b5be-d85aa74a8011" name="Changes" comment="ESP32 client deactivated">
-      <change afterPath="$PROJECT_DIR$/.idea/UGVserver.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CobraFlex.py" afterDir="false" />
+    <list default="true" id="cb0b9ce0-b0c8-45b4-b5be-d85aa74a8011" name="Changes" comment="CobraFlex client frist steps">
       <change beforePath="$PROJECT_DIR$/.RestfulApiTool/RestfulApiTool-SavedRequest-Cache.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.RestfulApiTool/RestfulApiTool-SavedRequest-Cache.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CobraFlex.py" beforeDir="false" afterPath="$PROJECT_DIR$/CobraFlex.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UGVserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/UGVserver.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -247,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762009711403</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="CobraFlex client frist steps">
+      <option name="closed" value="true" />
+      <created>1769015322488</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1769015322489</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -276,6 +282,7 @@
     <MESSAGE value="UGV sped, pan tilt commands" />
     <MESSAGE value="ugv_power_status response changed" />
     <MESSAGE value="ESP32 client deactivated" />
-    <option name="LAST_COMMIT_MESSAGE" value="ESP32 client deactivated" />
+    <MESSAGE value="CobraFlex client frist steps" />
+    <option name="LAST_COMMIT_MESSAGE" value="CobraFlex client frist steps" />
   </component>
 </project>

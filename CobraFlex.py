@@ -30,7 +30,7 @@ class CobraFlex:
 
   def write(self, data):
     try:
-      self.serial_port.write(data)
+      self.serial_port.write(bytes(data + "\r\n", "utf-8"))
     except Exception as exception_error:
       logging.error("ESP32 communication error: " + str(exception_error))
     finally:
