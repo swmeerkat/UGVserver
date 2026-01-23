@@ -1,0 +1,14 @@
+[Unit]
+Description=CobraFlex UGV web server
+
+[Service]
+ExecStart=/usr/bin/python3 /home/jetson/UGVserver/UGVserver.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+# sudo cp ugv-service.service /etc/systemd/system
+# systemctl start ugv-service
+# systemctl status ugv-service
+# systemctl enable ugv-service
