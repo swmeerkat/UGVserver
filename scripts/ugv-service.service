@@ -12,3 +12,4 @@ WantedBy=multi-user.target
 # systemctl start ugv-service
 # systemctl status ugv-service
 # systemctl enable ugv-service
+# systemctl disable ugv-service
