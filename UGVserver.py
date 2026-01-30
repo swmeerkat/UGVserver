@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-import CobraFlex
+from clients.CobraFlexClient import CobraFlex
+from clients.ST3215DriverClient import ST3215Driver
 from functools import cached_property
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import parse_qsl, urlparse
@@ -41,6 +42,8 @@ class UGVserver(BaseHTTPRequestHandler):
     match self.url.path:
       case "/cobraflex/cmd":
         CobraFlex.write(self.post_data.decode("utf-8"))
+      case "/gimbal/cmd/middle_position":
+        ST3215Driver.middle_position()
       case _:
         response = "{ \"error\": \"unknown command: " + self.path + "\"}"
     self.send_response(200)
@@ -51,5 +54,6 @@ class UGVserver(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
   CobraFlex = CobraFlex.CobraFlex()
+  ST3215Driver = ST3215Driver.ST3215Driver()
   ugvServer = HTTPServer(("0.0.0.0", 8000), UGVserver)
   ugvServer.serve_forever()

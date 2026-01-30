@@ -1,0 +1,33 @@
+#!/usr/bin/python3
+import time
+import serial
+
+print("CobraFlex UART test")
+
+
+serial_port = serial.Serial(
+    port="/dev/ttyACM1",
+    baudrate=115200,
+    bytesize=serial.EIGHTBITS,
+    parity=serial.PARITY_NONE,
+    stopbits=serial.STOPBITS_ONE,
+)
+time.sleep(1)
+
+try:
+  serial_port.write("{\"T\":1,\"L\":200,\"R\":200}\n".encode())
+  while True:
+    if serial_port.in_waiting > 0:
+      data = serial_port.readline().strip().decode("utf-8")
+      print(data)
+
+except KeyboardInterrupt:
+  print("Exiting Program")
+
+except Exception as exception_error:
+  print("Error: Exiting Program")
+  print("Error: " + str(exception_error))
+
+finally:
+  serial_port.close()
+  pass
