@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb0b9ce0-b0c8-45b4-b5be-d85aa74a8011" name="Changes" comment="ST3215 servo driver added">
+    <list default="true" id="cb0b9ce0-b0c8-45b4-b5be-d85aa74a8011" name="Changes" comment="ST3215 servo driver first steps">
+      <change beforePath="$PROJECT_DIR$/.RestfulApiTool/RestfulApiTool-SavedRequest-Cache.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.RestfulApiTool/RestfulApiTool-SavedRequest-Cache.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/CobraFlexClient/CobraFlex.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/CobraFlexClient/CobraFlex.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/CobraFlexClient/TestCobraFlexUART.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/CobraFlexClient/TestCobraFlexUART.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/ugv-service.service" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/ugv-service.service" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UGVserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/UGVserver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients/ST3215DriverClient/ST3215Driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/ST3215DriverClient/ST3215Driver.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +302,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769799206735</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="ST3215 servo driver first steps">
+      <option name="closed" value="true" />
+      <created>1769805240508</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1769805240508</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -337,6 +345,7 @@
     <MESSAGE value="workspace update" />
     <MESSAGE value="daemon configuration" />
     <MESSAGE value="ST3215 servo driver added" />
-    <option name="LAST_COMMIT_MESSAGE" value="ST3215 servo driver added" />
+    <MESSAGE value="ST3215 servo driver first steps" />
+    <option name="LAST_COMMIT_MESSAGE" value="ST3215 servo driver first steps" />
   </component>
 </project>

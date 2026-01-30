@@ -21,8 +21,7 @@ class ST3215Driver:
     self.baudrate = BAUDRATE
     self.device_name = DEVICE_NAME
     self.portHandler = PortHandler(self.device_name)
-    self.packetHandler = sts(self.portHandler)
-    self.servo = sts(self.packetHandler)
+    self.servo = sts(self.portHandler)
     if self.portHandler.openPort():
       pass
     else:
@@ -31,13 +30,11 @@ class ST3215Driver:
       pass
     else:
       logging.log(COMM_NOT_AVAILABLE, "Change baudrate failed")
-    pass
 
   def middle_position(self):
-    # goto pan middle position
+    # goto gimbal middle position
     self.servo.WritePosEx(1, 2048, 1000, 30)
     self.servo.WritePosEx(2, 2048, 1000, 30)
-    pass
 
   def __exit__(self, exception_type, exception_value, exception_traceback):
     self.portHandler.closePort()

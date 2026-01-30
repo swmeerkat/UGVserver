@@ -42,7 +42,7 @@ class UGVserver(BaseHTTPRequestHandler):
     match self.url.path:
       case "/cobraflex/cmd":
         CobraFlex.write(self.post_data.decode("utf-8"))
-      case "/gimbal/cmd/middle_position":
+      case "/gimbal/middle_position":
         ST3215Driver.middle_position()
       case _:
         response = "{ \"error\": \"unknown command: " + self.path + "\"}"
@@ -56,4 +56,5 @@ if __name__ == "__main__":
   CobraFlex = CobraFlex.CobraFlex()
   ST3215Driver = ST3215Driver.ST3215Driver()
   ugvServer = HTTPServer(("0.0.0.0", 8000), UGVserver)
+  print("UGV server started at http://0.0.0.0:8000")
   ugvServer.serve_forever()
