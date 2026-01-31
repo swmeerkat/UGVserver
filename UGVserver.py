@@ -44,6 +44,8 @@ class UGVserver(BaseHTTPRequestHandler):
         CobraFlex.write(self.post_data.decode("utf-8"))
       case "/gimbal/middle_position":
         ST3215Driver.middle_position()
+      case "/gimbal/step":
+        ST3215Driver.do_gimbal_step(self.post_data.decode("utf-8"))
       case _:
         response = "{ \"error\": \"unknown command: " + self.path + "\"}"
     self.send_response(200)
