@@ -44,7 +44,7 @@ class ST3215Driver:
     self.servo.WritePosEx(TILT_SERVO_ID, 2048, DEF_SERVO_SPEED, MAX_SERVO_ACC)
     self.servo.WritePosEx(PAN_SERVO_ID, 2048, DEF_SERVO_SPEED, MAX_SERVO_ACC)
 
-  # data: {"span": step, "tilt:": step}
+  # data: {"pan": step, "tilt:": step}
   def do_gimbal_step(self, data):
     cmd = json.loads(data)
     pan_step = cmd["pan"]
