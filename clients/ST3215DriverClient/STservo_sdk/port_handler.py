@@ -41,12 +41,12 @@ class PortHandler(object):
     def setBaudRate(self, baudrate):
         baud = self.getCFlagBaud(baudrate)
         if baud <= 0:
-            self.setupPort(DEFAULT_BAUDRATE)
-            self.baudrate = baudrate
+            self.baudrate = DEFAULT_BAUDRATE
+            self.setupPort()
             return False
         else:
             self.baudrate = baudrate
-            return self.setupPort(baud)
+            return self.setupPort()
 
     def getBaudRate(self):
         return self.baudrate
@@ -86,7 +86,7 @@ class PortHandler(object):
             self.packet_start_time = self.getCurrentTime()
         return time_since
 
-    def setupPort(self, cflag_baud):
+    def setupPort(self):
         if self.is_open:
             self.closePort()
         self.ser = serial.Serial(
@@ -95,7 +95,7 @@ class PortHandler(object):
             # parity = serial.PARITY_ODD,
             # stopbits = serial.STOPBITS_TWO,
             bytesize=serial.EIGHTBITS,
-            timeout=0
+            timeout=1
         )
         self.is_open = True
         self.ser.reset_input_buffer()

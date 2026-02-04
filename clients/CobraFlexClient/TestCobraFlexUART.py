@@ -6,7 +6,7 @@ print("CobraFlex UART test")
 
 
 serial_port = serial.Serial(
-    port="/dev/ttyACM2",
+    port="/dev/ttyACM1",
     baudrate=115200,
     bytesize=serial.EIGHTBITS,
     parity=serial.PARITY_NONE,

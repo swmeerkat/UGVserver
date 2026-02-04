@@ -8,14 +8,14 @@ from .STservo_sdk import *  # Uses ST Servo SDK library
 TILT_SERVO_ID = 1
 PAN_SERVO_ID = 2
 BAUDRATE = 1000000  # Servo default baudrate : 1000000
-DEVICE_NAME = '/dev/ttyACM0'
+DEVICE_NAME = '/dev/ttyTHS1'
 MAX_SERVO_SPEED = 3400
 DEF_SERVO_SPEED = 700
 MAX_SERVO_ACC = 255
 MAX_TILT = 2490
 MIN_TILT = 965
 MAX_TILT_STEP = 100  # + -> down, - -> up
-MAX_PAN = 4096
+MAX_PAN = 4095
 MIN_PAN = 0
 MAX_PAN_STEP = 1000  # + -> right, - -> left
 
@@ -35,9 +35,10 @@ class ST3215Driver:
       pass
     else:
       logging.log(COMM_NOT_AVAILABLE, "Change baudrate failed")
-    self.pan_position = self.servo.ReadPos(PAN_SERVO_ID)
-    self.tilt_position = self.servo.ReadPos(TILT_SERVO_ID)
-    print("pan: " + str(self.pan_position) + " tilt: " + str(self.tilt_position))
+    time.sleep(1)
+    pan_position = self.servo.ReadPos(PAN_SERVO_ID)
+    tilt_position = self.servo.ReadPos(TILT_SERVO_ID)
+    print("pan: " + str(pan_position) + " tilt: " + str(tilt_position))
 
   def middle_position(self):
     # goto gimbal middle position
@@ -63,6 +64,7 @@ class ST3215Driver:
       new_position = MAX_PAN
     elif new_position < MIN_PAN:
       new_position = MIN_PAN
+    print("pan position: " + str(position) + " new_position: " + str(new_position))
     self.servo.WritePosEx(PAN_SERVO_ID, new_position, DEF_SERVO_SPEED,
                           MAX_SERVO_ACC)
 
@@ -77,8 +79,10 @@ class ST3215Driver:
       new_position = MAX_TILT
     elif new_position < MIN_TILT:
       new_position = MIN_TILT
+    print("tilt position: " + str(position) + " new_position: " + str(new_position))
     self.servo.WritePosEx(TILT_SERVO_ID, new_position, DEF_SERVO_SPEED,
                           MAX_SERVO_ACC)
 
   def __exit__(self, exception_type, exception_value, exception_traceback):
     self.portHandler.closePort()
+    pass

@@ -27,7 +27,7 @@ from STservo_sdk import *  # Uses ST Servo SDK library
 # Default setting
 SERVO_ID = 2  # Servo ID : 1 (tilt), 2 (pan)
 BAUDRATE = 1000000  # Servo default baudrate : 1000000
-DEVICENAME = '/dev/ttyACM0'  # Check which port is being used on your controller
+DEVICENAME = '/dev/ttyTHS1'  # Check which port is being used on your controller
 
 # Initialize PortHandler instance
 # Set the port path
