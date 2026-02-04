@@ -35,7 +35,6 @@ class ST3215Driver:
       pass
     else:
       logging.log(COMM_NOT_AVAILABLE, "Change baudrate failed")
-    time.sleep(1)
     pan_position = self.servo.ReadPos(PAN_SERVO_ID)
     tilt_position = self.servo.ReadPos(TILT_SERVO_ID)
     print("pan: " + str(pan_position) + " tilt: " + str(tilt_position))
