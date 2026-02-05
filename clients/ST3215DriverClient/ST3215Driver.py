@@ -47,20 +47,14 @@ class ST3215Driver:
             print("WritePosEx: %s" % self.servo.getTxRxResult(com_result))
         elif com_error != 0:
             print("WritePosEx: %s" % self.servo.getRxPacketError(com_error))
-        while 1:
-            present_position, present_speed, com_result, com_error = self.servo.ReadPosSpeed(servo_id)
-            if com_result != COMM_SUCCESS:
-                print("ReadPosSpeed: %s" % self.servo.getTxRxResult(com_result))
-            else:
-                print(
-                    "ID:%03d GoalPos:%d PresPos:%d PresSpd:%d" % (servo_id, position, present_position, present_speed))
-            if com_error != 0:
-                print("ReadPosSpeed: %s" % self.servo.getRxPacketError(com_error))
-            moving, com_result, com_error = self.servo.ReadMoving(servo_id)
-            if com_result != COMM_SUCCESS:
-                print("ReadMoving: %s" % self.servo.getTxRxResult(com_result))
-            if moving == 0:
-                break
+        present_position, present_speed, com_result, com_error = self.servo.ReadPosSpeed(servo_id)
+        if com_result != COMM_SUCCESS:
+            print("ReadPosSpeed: %s" % self.servo.getTxRxResult(com_result))
+        else:
+            print("ID:%03d GoalPos:%d PresPos:%d PresSpd:%d" % (servo_id, position, present_position, present_speed))
+        if com_error != 0:
+            print("ReadPosSpeed: %s" % self.servo.getRxPacketError(com_error))
+
 
     # data: {"pan": step, "tilt:": step}
     def do_gimbal_step(self, data):

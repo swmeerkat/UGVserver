@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cb0b9ce0-b0c8-45b4-b5be-d85aa74a8011" name="Changes" comment="ST3215 driver changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/CobraFlexClient/CobraFlex.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/CobraFlexClient/CobraFlex.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/CobraFlexClient/TestCobraFlexUART.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/CobraFlexClient/TestCobraFlexUART.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/ST3215DriverClient/Ping.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/ST3215DriverClient/Ping.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/ST3215DriverClient/ST3215Driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/ST3215DriverClient/ST3215Driver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/ST3215DriverClient/TestServos.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/ST3215DriverClient/TestServos.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -407,7 +402,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770305250184</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="ST3215 driver changes">
+      <option name="closed" value="true" />
+      <created>1770308895848</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1770308895848</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
