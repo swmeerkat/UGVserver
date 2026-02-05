@@ -99,6 +99,7 @@ class PortHandler(object):
         )
         self.is_open = True
         self.ser.reset_input_buffer()
+        self.ser.reset_output_buffer()
         self.tx_time_per_byte = (1000.0 / self.baudrate) * 10.0
         return True
 

@@ -36,13 +36,9 @@ class ST3215Driver:
             logging.log(COMM_NOT_AVAILABLE, "Open port failed")
         time.sleep(1)
         self.middle_position()
-        print("ST3215 Driver Initialized")
-        # pan_position = self.servo.ReadPos(PAN_SERVO_ID)
-        # tilt_position = self.servo.ReadPos(TILT_SERVO_ID)
-        # print("pan: " + str(pan_position) + " tilt: " + str(tilt_position))
+        print("ST3215 driver initialized")
 
     def middle_position(self):
-        # goto gimbal middle position
         self.goto_position(PAN_SERVO_ID, MIDDLE_POSITION)
         self.goto_position(TILT_SERVO_ID, MIDDLE_POSITION)
 
@@ -63,7 +59,7 @@ class ST3215Driver:
                 print("ReadPosSpeed: %s" % self.servo.getRxPacketError(com_error))
             moving, com_result, com_error = self.servo.ReadMoving(servo_id)
             if com_result != COMM_SUCCESS:
-                print("ReadPosSpeed: %s" % self.servo.getTxRxResult(com_result))
+                print("ReadMoving: %s" % self.servo.getTxRxResult(com_result))
             if moving == 0:
                 break
 
