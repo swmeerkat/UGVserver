@@ -8,7 +8,7 @@ from .STservo_sdk import *  # Uses ST Servo SDK library
 TILT_SERVO_ID = 1
 PAN_SERVO_ID = 2
 BAUDRATE = 1000000  # Servo default baudrate : 1000000
-DEVICE_NAME = '/dev/ttyTHS1'
+DEVICE_NAME = '/dev/ttyACM0'
 MAX_SERVO_SPEED = 3400
 DEF_SERVO_SPEED = 2400
 MAX_SERVO_ACC = 150
@@ -34,7 +34,6 @@ class ST3215Driver:
             pass
         else:
             logging.log(COMM_NOT_AVAILABLE, "Open port failed")
-        time.sleep(1)
         self.middle_position()
         print("ST3215 driver initialized")
 

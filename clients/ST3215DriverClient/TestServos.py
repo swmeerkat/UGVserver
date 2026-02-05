@@ -27,7 +27,7 @@ from STservo_sdk import *  # Uses ST Servo SDK library
 # Settings
 SERVO_ID = 2  # 1 (tilt), 2 (pan)
 BAUDRATE = 1000000  # Servo default baudrate : 1000000
-DEVICE_NAME = '/dev/ttyTHS1'
+DEVICE_NAME = '/dev/ttyACM0'
 MAX_SERVO_SPEED = 3400
 DEF_SERVO_SPEED = 2400
 MAX_SERVO_ACC = 150
