@@ -42,19 +42,18 @@ class ST3215Driver:
         self.goto_position(TILT_SERVO_ID, MIDDLE_POSITION)
 
     def goto_position(self, servo_id, position):
-        com_result, com_error = self.servo.WritePosEx(servo_id, position, DEF_SERVO_SPEED, DEF_SERVO_ACC)
-        if com_result != COMM_SUCCESS:
-            print("WritePosEx: %s" % self.servo.getTxRxResult(com_result))
-        elif com_error != 0:
-            print("WritePosEx: %s" % self.servo.getRxPacketError(com_error))
-        present_position, present_speed, com_result, com_error = self.servo.ReadPosSpeed(servo_id)
-        if com_result != COMM_SUCCESS:
-            print("ReadPosSpeed: %s" % self.servo.getTxRxResult(com_result))
+        comm_result, comm_error = self.servo.WritePosEx(servo_id, position, DEF_SERVO_SPEED, DEF_SERVO_ACC)
+        if comm_result != COMM_SUCCESS:
+            print("WritePosEx: %s" % self.servo.getTxRxResult(comm_result))
+        elif comm_error != 0:
+            print("WritePosEx: %s" % self.servo.getRxPacketError(comm_error))
+        current_position, current_speed, comm_result, comm_error = self.servo.ReadPosSpeed(servo_id)
+        if comm_result != COMM_SUCCESS:
+            print("ReadPosSpeed: %s" % self.servo.getTxRxResult(comm_result))
         else:
-            print("ID:%03d GoalPos:%d PresPos:%d PresSpd:%d" % (servo_id, position, present_position, present_speed))
-        if com_error != 0:
-            print("ReadPosSpeed: %s" % self.servo.getRxPacketError(com_error))
-
+            print("ID:%03d TargetPos:%d CurPos:%d CurSpd:%d" % (servo_id, position, current_position, current_speed))
+        if comm_error != 0:
+            print("ReadPosSpeed: %s" % self.servo.getRxPacketError(comm_error))
 
     # data: {"pan": step, "tilt:": step}
     def do_gimbal_step(self, data):
@@ -75,7 +74,7 @@ class ST3215Driver:
             new_position = MAX_PAN
         elif new_position < MIN_PAN:
             new_position = MIN_PAN
-        print("pan position: " + str(position) + " new_position: " + str(new_position))
+        print("CurPanPos: " + str(position) + " TargetPanPos: " + str(new_position))
         self.goto_position(PAN_SERVO_ID, new_position)
 
     def tilt_step(self, step):
@@ -89,9 +88,9 @@ class ST3215Driver:
             new_position = MAX_TILT
         elif new_position < MIN_TILT:
             new_position = MIN_TILT
-        print("tilt position: " + str(position) + " new_position: " + str(new_position))
+        print("CurTiltPos: " + str(position) + " TargetTiltPos: " + str(new_position))
         self.goto_position(TILT_SERVO_ID, new_position)
 
     def __exit__(self, exception_type, exception_value, exception_traceback):
+        self.portHandler.clearPort()
         self.portHandler.closePort()
-        pass

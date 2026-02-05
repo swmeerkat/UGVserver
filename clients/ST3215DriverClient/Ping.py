@@ -47,11 +47,11 @@ while 1:
         break
     present_position, present_speed, comm_result, error = packetHandler.ReadPosSpeed(SERVO_ID)
     if comm_result != COMM_SUCCESS:
-        print(packetHandler.getTxRxResult(comm_result))
+        print("ReadPosSpeed: %s", packetHandler.getTxRxResult(comm_result))
     else:
         print("Servo:%03d PresPos:%d PresSpd:%d" % (SERVO_ID, present_position, present_speed))
     if error != 0:
-        print(packetHandler.getRxPacketError(error))
+        print("ReadPosSpeed: %s", packetHandler.getRxPacketError(error))
 
 portHandler.closePort()
 print("Done!")
