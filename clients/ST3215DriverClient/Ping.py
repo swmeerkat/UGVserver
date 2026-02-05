@@ -38,26 +38,17 @@ portHandler = PortHandler(DEVICENAME)
 # Get methods and members of Protocol
 packetHandler = sts(portHandler)
 
-# Open port
+# Open port with default baudrate
 if portHandler.openPort():
   print("Port opened")
 else:
   print("Open port failed")
-  print("Press any key to terminate...")
-  getch()
-  quit()
-
-# Set port baudrate
-if portHandler.setBaudRate(BAUDRATE):
-  print("Baudrate changed")
-else:
-  print("Change baudrate failed")
-  print("Press any key to terminate...")
+  print("Press any key to quit")
   getch()
   quit()
 
 while 1:
-  print("Press any key to continue! (or press ESC to quit!)")
+  print("Press any key to continue or ESC to quit")
   if getch() == chr(0x1b):
     break
   # Read Servo present position
@@ -70,3 +61,4 @@ while 1:
     print(packetHandler.getRxPacketError(sts_error))
 
 portHandler.closePort()
+print("Done!")
