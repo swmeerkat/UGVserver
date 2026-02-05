@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb0b9ce0-b0c8-45b4-b5be-d85aa74a8011" name="Changes" comment="ST3215 driver changes">
+    <list default="true" id="cb0b9ce0-b0c8-45b4-b5be-d85aa74a8011" name="Changes" comment="Code enhancements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UGVserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/UGVserver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/CobraFlexClient/CobraFlex.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/CobraFlexClient/CobraFlex.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/CobraFlexClient/TestCobraFlexUART.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/CobraFlexClient/TestCobraFlexUART.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/ST3215DriverClient/Ping.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/ST3215DriverClient/Ping.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/ST3215DriverClient/ST3215Driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/ST3215DriverClient/ST3215Driver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/Ups3sIna219.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/Ups3sIna219.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -424,7 +419,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770311090913</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Code enhancements">
+      <option name="closed" value="true" />
+      <created>1770322643877</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1770322643878</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -463,6 +466,7 @@
     <MESSAGE value="Gimbal camera script" />
     <MESSAGE value="corrections" />
     <MESSAGE value="ST3215 driver changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="ST3215 driver changes" />
+    <MESSAGE value="Code enhancements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code enhancements" />
   </component>
 </project>

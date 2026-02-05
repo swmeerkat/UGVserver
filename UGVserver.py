@@ -60,4 +60,10 @@ if __name__ == "__main__":
     ST3215Driver = ST3215Driver.ST3215Driver()
     ugvServer = HTTPServer(("0.0.0.0", 8000), UGVserver)
     print("UGV server started at http://0.0.0.0:8000")
-    ugvServer.serve_forever()
+    try:
+        ugvServer.serve_forever()
+    except KeyboardInterrupt:
+        pass
+    finally:
+        ugvServer.server_close()
+        print("UGV server stopped")
