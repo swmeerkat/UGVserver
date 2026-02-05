@@ -95,7 +95,7 @@ class PortHandler(object):
             # parity = serial.PARITY_ODD,
             # stopbits = serial.STOPBITS_TWO,
             bytesize=serial.EIGHTBITS,
-            timeout=1
+            timeout=0
         )
         self.is_open = True
         self.ser.reset_input_buffer()
