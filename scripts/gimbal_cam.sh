@@ -10,7 +10,7 @@
 #  udpsink host=192.168.178.24 port=5000 sync=false -e
 
 # USB camera
-gst-launch-1.0 v4l2src device=/dev/video0 ! 'video/x-raw, width=1280, height=720' ! \
+gst-launch-1.0 v4l2src device=/dev/video0 ! 'video/x-raw, width=800, height=600' ! \
   nvvidconv ! x264enc tune=zerolatency speed-preset=fast ! \
   rtph264pay pt=96 ! udpsink host=192.168.178.24 port=5000 sync=false -e
 
