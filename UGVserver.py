@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import subprocess
 from functools import cached_property
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import parse_qsl, urlparse
@@ -47,6 +48,9 @@ class UGVserver(BaseHTTPRequestHandler):
                 ST3215Driver.middle_position()
             case "/gimbal/step":
                 ST3215Driver.do_gimbal_step(self.post_data.decode("utf-8"))
+            case "/gimbal/camera/on":
+                pid = self.gimbal_cam_on()
+                response = "{ \"gimbal_pid\": \"" + str(pid) + "\"}"
             case _:
                 response = "{ \"error\": \"unknown command: " + self.path + "\"}"
         self.send_response(200)
@@ -54,6 +58,10 @@ class UGVserver(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(response.encode("utf-8"))
 
+    def gimbal_cam_on(self):
+        command = "./scripts/start_gimbal_cam.sh"
+        process = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        return process.stdout.decode("utf-8").strip()
 
 if __name__ == "__main__":
     CobraFlex = CobraFlex.CobraFlex()
