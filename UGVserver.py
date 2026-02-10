@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import json
 import subprocess
 from functools import cached_property
 from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -10,6 +11,13 @@ from clients.ST3215DriverClient import ST3215Driver
 
 def gimbal_cam_on():
     command = "./scripts/start_gimbal_cam.sh"
+    process = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    return process.stdout.decode("utf-8").strip()
+
+
+def gimbal_cam_off(data):
+    json_pid = json.loads(data)
+    command = "kill -9 " + str(json_pid["gimbal_pid"])
     process = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     return process.stdout.decode("utf-8").strip()
 
@@ -57,6 +65,9 @@ class UGVserver(BaseHTTPRequestHandler):
             case "/gimbal/camera/on":
                 pid = gimbal_cam_on()
                 response = "{ \"gimbal_pid\": \"" + str(pid) + "\"}"
+            case "/gimbal/camera/off":
+                result = gimbal_cam_off(self.post_data.decode("utf-8"))
+                response = "{ \"result\": \"" + str(result) + "\" }"
             case _:
                 response = "{ \"error\": \"unknown command: " + self.path + "\"}"
         self.send_response(200)
