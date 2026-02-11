@@ -13,9 +13,9 @@
 # start the streamer as background process
 # redirect stdout, stderr to /dev/null
 # return the pid of the last started background process
-gst-launch-1.0 v4l2src  extra-controls="c, auto-exposure=1, exposure_time_absolute=2000, sharpness=75" \
+gst-launch-1.0 v4l2src  extra-controls="c, auto-exposure=0" \
   device=/dev/video0 ! 'video/x-raw, width=1280, height=960' ! \
-  nvvidconv ! x264enc tune=zerolatency speed-preset=fast ! \
+  nvvidconv ! x264enc tune=zerolatency speed-preset=fast bitrate=8000 ! \
   rtph264pay pt=96 ! udpsink host=192.168.178.24 port=5000 sync=false -e  > /dev/null 2>&1 &
 echo $!
 
