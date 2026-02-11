@@ -12,7 +12,7 @@ DEVICE_NAME = '/dev/ttyACM0'
 MAX_SERVO_SPEED = 3400
 DEF_SERVO_SPEED = 2400
 MAX_SERVO_ACC = 150
-DEF_SERVO_ACC = 50
+DEF_SERVO_ACC = 40
 MAX_TILT = 2490
 MIN_TILT = 1024
 MAX_TILT_STEP = 100  # + -> down, - -> up
@@ -34,7 +34,6 @@ class ST3215Driver:
             pass
         else:
             logging.log(COMM_NOT_AVAILABLE, "Open port failed")
-        self.middle_position()
         print("ST3215 driver initialized")
 
     def middle_position(self):
