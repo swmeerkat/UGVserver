@@ -9,14 +9,14 @@
 #  rtph264pay pt=96 ! \
 #  udpsink host=192.168.178.24 port=5000 sync=false -e
 
-# USB camera
+# IMX335 5MP USB Camera (B)
 # start the streamer as background process
 # redirect stdout, stderr to /dev/null
 # return the pid of the last started background process
-gst-launch-1.0 v4l2src  extra-controls="c, auto-exposure=0, sharpness=75" \
-  device=/dev/video0 ! 'video/x-raw, width=1280, height=960' ! \
-  nvvidconv ! x264enc tune=zerolatency speed-preset=fast bitrate=16384 ! \
-  rtph264pay pt=96 ! udpsink host=192.168.178.24 port=5000 sync=false -e  > /dev/null 2>&1 &
+gst-launch-1.0 v4l2src  extra-controls="c, auto_exposure=0" \
+   device=/dev/video0 ! 'video/x-raw, format=YUY2, width=800, height=600, framerate=10/1' ! \
+   nvvidconv ! x264enc tune=zerolatency speed-preset=ultrafast bitrate=16384 ! \
+   rtph264pay pt=96 ! udpsink host=192.168.178.24 port=5000 sync=false -e > /dev/null 2>&1 &
 echo $!
 
 # Test
