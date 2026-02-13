@@ -10,7 +10,7 @@ from clients.ST3215DriverClient import ST3215Driver
 
 
 def gimbal_cam_on():
-    command = "./scripts/start_gimbal_cam.sh"
+    command = "/home/jetson/UGVserver/scripts/start_gimbal_cam.sh"
     process = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     return process.stdout.decode("utf-8").strip()
 

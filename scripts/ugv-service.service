@@ -12,4 +12,6 @@ WantedBy=multi-user.target
 # systemctl start ugv-service
 # systemctl status ugv-service
 # systemctl enable ugv-service
+#
+# sudo systemctl stop ugv-service
 # systemctl disable ugv-service

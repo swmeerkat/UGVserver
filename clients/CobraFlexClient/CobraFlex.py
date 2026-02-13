@@ -16,6 +16,7 @@ class CobraFlex:
             stopbits=serial.STOPBITS_ONE
         )
         time.sleep(1)
+        print("CobraFlex driver initialized")
 
     def read(self):
         try:
