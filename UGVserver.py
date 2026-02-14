@@ -5,8 +5,8 @@ from functools import cached_property
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import parse_qsl, urlparse
 
-from clients.CobraFlexClient import CobraFlex
-from clients.ST3215DriverClient import ST3215Driver
+from drivers.CobraFlexDriver import CobraFlex
+from drivers.GimbalDriver import ST3215Driver
 
 
 def gimbal_cam_on():
